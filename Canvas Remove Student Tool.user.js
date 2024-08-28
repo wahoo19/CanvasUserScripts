@@ -4,7 +4,7 @@
 // @version      2.11
 // @description  A Canvas UserScript to bulk remove student enrollments from a course.
 // @author       Chad Scott (ChadScott@katyisd.org)
-// @include     https://*.instructure.com/courses/*/users
+// @include     https://mychesterfieldschools.instructure.com/courses/253180/users
 // @require     https://code.jquery.com/jquery-3.4.1.min.js
 // @grant        none
 // ==/UserScript==
@@ -25,7 +25,7 @@
     var allStudents = [];
     /* role setup */
     var roles = ENV.current_user_roles;
-    var buttonRoles = ["admin", "root_admin"];
+    var buttonRoles = ["teacher", "admin", "root_admin"];
     var test1 = buttonRoles.some(el => roles.includes(el));
     if( (test1 === true) && (assocRegex3.test(window.location.pathname))){
         add_button();
